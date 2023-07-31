@@ -15,6 +15,17 @@ class GameList(LoginRequiredMixin, ListView):
     model = Game
     context_object_name = 'games'
 
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+
+        search_input = self.request.GET.get('search-area') or''
+        if search_input:
+            context['games'] = context['games'].filter(
+                name__startswith=search_input)
+        context['search_input'] = search_input
+
+        return context
+
 class GameDetail(LoginRequiredMixin, DetailView):
     model = Game
     context_object_name = 'game'
