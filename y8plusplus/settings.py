@@ -39,7 +39,10 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'core',
     'user',
+    'dashboard',
+    'community',
 ]
+
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
