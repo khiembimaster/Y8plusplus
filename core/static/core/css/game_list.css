@@ -1,0 +1,233 @@
+.games__wrapper {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: url("../img/bg.jpg");
+  background-size: cover;
+  background-position: center;
+
+  overflow-y: scroll;
+}
+
+.games__wrapper::-webkit-scrollbar {
+  display: none;
+}
+
+.brand {
+  position: absolute;
+  top: var(--header-height);
+  width: 100%;
+  height: var(--brand-height);
+  color: white;
+  font-size: 4em;
+  border-bottom: var(--pink-color-1) 0.05em solid;
+
+  box-shadow: inset 0 0 0.5em 0 var(--pink-color-1),
+    0 0 0.5em 0 var(--pink-color-1);
+  background-color: var(--purple-color-l3);
+}
+
+/* List of games */
+.games {
+  display: flex;
+  flex-wrap: wrap;
+  position: relative;
+  top: calc(var(--header-height) + var(--brand-height));
+  width: 100%;
+  min-height: 100%;
+  background-color: var(--pink-color-l4);
+}
+/* List of games */
+
+/* Game card */
+.game {
+  position: relative;
+  height: 24em;
+  width: 16em;
+  margin: 1em;
+  cursor: pointer;
+}
+
+/* Hover effect */
+.game--hover {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.game--hover::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+
+  border-radius: 4px;
+  transition: all 0.4s ease-in;
+}
+
+.game--hover::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+
+  border-radius: 4px;
+  transition: all 0.4s ease-in;
+}
+
+.game:hover .game--hover::before {
+  transform: rotate(5deg);
+  background: linear-gradient(
+    270deg,
+    rgb(255, 25, 195) 0%,
+    rgb(0, 220, 255) 16%,
+    rgb(122, 255, 0) 82%,
+    rgb(0, 254, 207) 100%
+  );
+  box-shadow: 0px 0px 112px -41px rgb(181, 127, 167),
+    0 -10px 26px -5px rgb(0, 220, 255), 0px 0px 112px -41px rgb(122, 255, 0),
+    0 -10px 26px -5px rgb(0, 254, 207);
+}
+.game:hover .game--hover::after {
+  transform: rotate(-5deg);
+  background: linear-gradient(
+    270deg,
+    rgb(255, 25, 195) 0%,
+    rgb(0, 220, 255) 16%,
+    rgb(122, 255, 0) 82%,
+    rgb(0, 254, 207) 100%
+  );
+  box-shadow: 0px 0px 112px -41px rgb(255, 25, 195),
+    0 -10px 26px -5px rgb(0, 220, 255), 0px 0px 112px -41px rgb(122, 255, 0),
+    0 -10px 26px -5px rgb(0, 254, 207);
+}
+/* Hover effect */
+
+.game__wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+
+  background: var(--pink-color-l4);
+  color: white;
+  text-shadow: 0 0 0.125em hsl(0 0% 100% / 0.3), 0 0 0.45em white;
+
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.game:hover .game__wrapper {
+  background: black;
+  background: linear-gradient(
+    -45deg,
+    var(--purple-color-3),
+    var(--pink-color-2)
+  );
+  box-shadow: inset 0 0 0.5em 0 var(--pink-color-1),
+    0 0 0.5em 0 var(--pink-color-1);
+}
+
+.game__thumb {
+  position: relative;
+  height: 10em;
+  background-size: cover;
+  border-radius: 4px 4px 0 0;
+  padding-bottom: 0.5em;
+}
+
+.game__name {
+  --game-name-color: var(--pink-color-2);
+  display: block;
+  position: relative;
+  height: 1.5em;
+  width: 70%;
+  margin: 0.5em 0;
+
+  font-size: 1em;
+  line-height: 1.5em;
+  text-align: center;
+  font-weight: bold;
+  white-space: nowrap;
+
+  background-color: var(--game-name-color);
+}
+
+.game:hover .game__name {
+  box-shadow: inset 0 0 0.5em 0 var(--game-name-color),
+    0 0 0.5em 0 var(--game-name-color);
+}
+
+.game__name::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 0;
+
+  border: 0.75em solid var(--game-name-color);
+  border-color: transparent var(--game-name-color) transparent transparent;
+  transform: translateX(-100%);
+}
+
+.game__name::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 0;
+  height: 0;
+
+  border: 0.75em solid var(--game-name-color);
+  border-color: transparent transparent transparent var(--game-name-color);
+  transform: translateX(100%);
+}
+
+.game__description--scroll {
+  position: relative;
+  width: 100%;
+  height: 118em;
+  margin: 0.5em 0;
+  overflow: hidden;
+}
+
+.game__description {
+  display: block;
+  width: 100%;
+  padding: 0 1em;
+  margin: 0;
+
+  font-size: 0.7em;
+  overflow: hidden;
+}
+
+.game__categories {
+  display: block;
+  margin: 0.3em 0;
+}
+
+@keyframes scrolling {
+  from {
+    top: 0;
+    transform: translate3d(0, 0, 0);
+  }
+  to {
+    transform: translate3d(0, calc(-100% + 10em), 0);
+  }
+}

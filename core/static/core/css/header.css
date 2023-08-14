@@ -1,0 +1,154 @@
+/* Header */
+.header {
+  --header-color: var(--pink-color-1);
+  display: flex;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: var(--header-height);
+  background-color: var(--purple-color-m1);
+  z-index: var(--header-z-index);
+
+  /* Neon effect */
+  color: white;
+  border-bottom: var(--header-color) 0.125em solid;
+  text-shadow: 0 0 0.125em hsl(0 0% 100% / 0.3), 0 0 0.45em var(--header-color);
+  box-shadow: inset 0 0 0.5em 0 var(--header-color),
+    0 0 0.5em 0 var(--header-color);
+}
+/* Header */
+
+/* Logo */
+.logo {
+  --logo-color: var(--pink-color-3);
+  --edge: 2.8em;
+  display: flex;
+  height: var(--header-height);
+  align-items: center;
+}
+
+.logo__image {
+  margin-left: 2em;
+  position: relative;
+  min-height: var(--edge);
+  min-width: var(--edge);
+  background-color: var(--logo-color);
+  -webkit-mask: url("https://upload.wikimedia.org/wikipedia/commons/7/72/Virus_malware_hazard_icon.svg")
+    no-repeat center;
+  mask: url("https://upload.wikimedia.org/wikipedia/commons/7/72/Virus_malware_hazard_icon.svg")
+    no-repeat center;
+}
+
+.logo__brand {
+  margin-left: 0.5em;
+  font-size: 2em;
+  font-weight: bold;
+}
+/* Logo */
+
+/* Search bar */
+.search-bar {
+  --search-bar-color: var(--red-color-1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 100%;
+  height: 100%;
+}
+
+.search-bar__wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+
+  width: 70%;
+  height: 100%;
+}
+
+.search-bar__field {
+  padding: 0.5em 0 0.5em 1em;
+  width: 100%;
+  font-size: 1.2em;
+  background: transparent;
+
+  /* Neon effect */
+  border: var(--search-bar-color) 0.125em solid;
+  border-radius: 2em;
+  box-shadow: inset 0 0 0.5em 0 var(--search-bar-color),
+    0 0 0.5em 0 var(--search-bar-color);
+}
+
+.search-bar__field,
+.search-bar__field::placeholder {
+  color: var(--search-bar-color);
+  text-shadow: 0 0 0.125em hsl(0 0% 100% / 0.3),
+    0 0 0.45em var(--search-bar-color);
+}
+
+.search-bar__field:focus {
+  background: var(--search-bar-color);
+  color: white;
+  text-shadow: 0 0 0.125em hsl(0 0% 100% / 0.3), 0 0 0.45em white;
+  box-shadow: inset 0 0 1.5em 0 var(--search-bar-color),
+    0 0 1.5em 0 var(--search-bar-color);
+  outline: none;
+}
+
+.search-bar__field:focus::placeholder {
+  color: white;
+  text-shadow: 0 0 0.125em hsl(0 0% 100% / 0.3), 0 0 0.45em white;
+  opacity: 0.7;
+}
+
+.search-bar__btn {
+  --btn-radius: 3em;
+  position: absolute;
+  right: 0;
+  width: var(--btn-radius);
+  height: var(--btn-radius);
+
+  background: transparent;
+  color: var(--search-bar-color);
+  text-shadow: 0 0 0.125em hsl(0 0% 100% / 0.3),
+    0 0 0.45em var(--search-bar-color);
+  border: none;
+  border-radius: 50%;
+
+  cursor: pointer;
+}
+
+.search-bar__btn:focus {
+  outline: none;
+}
+/* Search bar */
+
+/* User icon */
+.user {
+  --user-icon-color: var(--pink-color-3);
+  display: flex;
+  justify-content: right;
+  align-items: center;
+  height: 100%;
+}
+
+.user__icon {
+  position: relative;
+  right: 1em;
+  padding: 0.5em;
+
+  font-size: 1.5em;
+  border-radius: 50%;
+  background-color: var(--user-icon-color);
+  box-shadow: inset 0 0 0.5em 0 var(--user-icon-color),
+    0 0 0.5em 0 var(--user-icon-color);
+  cursor: pointer;
+}
+
+.user__icon:hover {
+  color: var(--user-icon-color);
+  background-color: white;
+  box-shadow: inset 0 0 0.5em 0 white, 0 0 0.5em 0 white;
+}
+/* User icon */

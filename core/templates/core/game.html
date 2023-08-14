@@ -1,5 +1,60 @@
-{% extends 'core/base.html' %}
-{%block title%} {{game.name}} {%endblock%}
-{%block content%}
-<h1>Game: {{game.name}}</h1>
-{%endblock%}
+{% extends "core/base.html" %} 
+{% block title %}{{ game.name }}{% endblock %}
+<!-- prettier-ignore  -->
+{% load static %}
+{% block styles %}
+<link rel="stylesheet" href="{% static 'core/css/game_play.css' %}" />
+{% endblock %}
+
+<!-- prettier-ignore  -->
+{% block content %}
+<div class="gameplay__wrapper">
+  <div class="gameplay">
+    <div class="game__title">
+      <span class="glowing-text"> {{ game.name }} </span>
+    </div>
+    <div class="game__window__wrapper">
+      <div class="game__window text-effect-2">
+        <iframe src="{{ game.iframe |safe}}" frameborder="0"></iframe>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+    <div class="game__information row">
+      <div class="game__describe col-7">{{ game.description | safe }}</div>
+      <div class="game__more-info col-5">
+        <span class="game__more-info__header text-effect-2"
+          >More information</span
+        >
+        <span class="game__more-info__content">
+          <span class="game__more-info__content__header">Author</span>
+          <span class="game__more-info__content__text">
+            {{game.created_by}}
+            <!-- {{ game.author }} -->
+          </span>
+        </span>
+        <span class="game__more-info__content">
+          <span class="game__more-info__content__header">Genre</span>
+          <span class="game__more-info__content__text">
+            {{game.genre}}
+            <!-- {{ game.genre }} -->
+          </span>
+        </span>
+      </div>
+    </div>
+    <div class="comments">
+      <span class="comments__header">Comments</span>
+      <span class="comments__placeholder">
+        Log in with your account to leave a comment
+      </span>
+      <div class="comment">
+        <span class="comment__avatar"></span>
+        <span class="comment__user-name"></span>
+        <span class="comment__content"></span>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

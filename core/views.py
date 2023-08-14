@@ -34,11 +34,11 @@ class GameDetail(LoginRequiredMixin, DetailView):
 class GamePublish(LoginRequiredMixin, CreateView):
     model = Game
     # fields = '__all__'
-    fields = ['name', 'genre','description','iframe','thumnail']
+    fields = ['name', 'genre', 'slug', 'description','iframe','thumnail']
     success_url = reverse_lazy('games')
 
     def form_valid(self, form: BaseModelForm) -> HttpResponse:
-        form.instance.user = self.request.user
+        form.instance.created_by = self.request.user
         return super(GamePublish, self).form_valid(form)
 
 class GameUpdate(LoginRequiredMixin, UpdateView):

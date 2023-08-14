@@ -1,0 +1,154 @@
+#user-field__login__switch-btn {
+  display: none;
+}
+
+.user-field__login {
+  /* display: none; */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 100;
+  transform: translate(-50%, -50%);
+  width: 32em;
+  height: 40em;
+  max-width: 100%;
+  max-height: 100%;
+
+  background: url("../img/user_login_field.png");
+  background-size: 100%;
+  border-radius: 8px;
+
+  overflow: hidden;
+}
+
+.user-field__login--active {
+  display: block;
+}
+
+.user-field__login label {
+  display: flex;
+  justify-content: center;
+  padding: 1em;
+
+  color: white;
+  font-size: 2.5em;
+  font-weight: bold;
+
+  cursor: pointer;
+  transition: 0.3s ease-in-out;
+}
+
+.user-field__login input {
+  display: block;
+  width: 60%;
+  height: 3em;
+  padding: 1em;
+  margin: 1em auto;
+
+  border: 0.15em solid;
+  border-top: none;
+  border-left: none;
+
+  outline: none;
+}
+
+.user-field__login button {
+  display: block;
+  width: 60%;
+  height: 2em;
+  margin: 2em auto;
+
+  color: #fff;
+  font-size: 1.5em;
+  font-weight: bold;
+  text-shadow: 0 0 0.125em hsl(0 0% 100% / 0.3), 0 0 0.45em white;
+
+  background: rgba(0, 0, 0, 0.5);
+  border: var(--purple-color-2) solid 0.07em;
+  border-radius: 4px;
+  outline: none;
+
+  transition: 0.2s ease-in;
+  cursor: pointer;
+}
+
+.user-field__login button:hover {
+  background: var(--purple-color-2);
+  box-shadow: inset 0 0 0.5em 0 var(--purple-color-2),
+    0 0 0.5em 0 var(--purple-color-2);
+}
+
+.user-field__login .signup {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.user-field__login .signup input {
+  border-color: white;
+  color: white;
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.user-field__login .signup input:focus {
+  box-shadow: inset 0 0 0.5em 0 white, 0 0 0.5em 0 white;
+}
+
+.user-field__login .signup input::placeholder {
+  color: white;
+  opacity: 0.7;
+  text-shadow: 0 0 0.125em hsl(0 0% 100% / 0.3), 0 0 0.45em white;
+}
+
+.user-field__login .login {
+  position: relative;
+  height: 40em;
+  background: white;
+  border-radius: 60% / 10%;
+  transform: translateY(-8em);
+  transition: 0.8s ease-in-out;
+}
+
+.user-field__login .login input {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+.user-field__login .login input {
+  box-shadow: inset 0 0 0.5em 0 white, 0 0 0.5em 0 black;
+}
+
+.user-field__login .login button {
+  color: white;
+  background: var(--purple-color-l3);
+}
+
+.user-field__login .login button:hover {
+  background: var(--purple-color-m3);
+}
+
+.user-field__login .login label {
+  color: black;
+  transform: scale(0.6);
+}
+
+.user-field__login__forgot {
+  display: block;
+  position: absolute;
+  right: 2em;
+  color: var(--purple-color-2);
+  font-weight: 500;
+  text-shadow: 0 0 0.125em hsl(0 0% 100% / 0.3),
+    0 0 0.45em var(--purple-color-2);
+}
+
+#user-field__login__switch-btn:checked ~ .login {
+  transform: translateY(calc(-100% + 6em));
+}
+
+#user-field__login__switch-btn:checked ~ .login label {
+  transform: scale(1);
+}
+
+#user-field__login__switch-btn:checked ~ .signup label {
+  transform: scale(0.6);
+}
