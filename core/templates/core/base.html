@@ -32,7 +32,6 @@
     <link rel="stylesheet" href="{% static 'core/css/sidebar.css' %}" />
     <link rel="stylesheet" href="{% static 'core/css/header.css' %}" />
     <link rel="stylesheet" href="{% static 'core/css/utils.css' %}" />
-    <link rel="stylesheet" href="{% static 'core/css/user_login_field.css' %}" />
     {% block styles %}{% endblock %}
     <style>
       @import url("https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500&family=Monoton&display=swap");
@@ -75,58 +74,28 @@
         </a>
         <form method="GET" class="search-bar col-9">
           <span class="search-bar__wrapper">
-            
-                <input
-                    class="search-bar__field"
-                    type="text"
-                    name="search-area"
-                    value="{{search_input}}"
-                    placeholder="What are you looking for ..."
-                />
-                <button class="search-bar__btn">
-                    <i class="fa-solid fa-magnifying-glass search-bar__icon"></i>
-                </button>
-                
-            
+            <input
+              class="search-bar__field"
+              type="text"
+              name="search-area"
+              value="{{search_input}}"
+              placeholder="What are you looking for ..."
+            />
+            <button class="search-bar__btn">
+              <i class="fa-solid fa-magnifying-glass search-bar__icon"></i>
+            </button>
           </span>
         </form>
         <div class="user col-1">
           <i class="fa-solid fa-user user__icon"></i>
-        </div>
-        <div class="user-field__login">
-          <input type="checkbox" id="user-field__login__switch-btn" aria-hidden="true"/>
-          <div class="signup">
-            <form>
-              <label
-                for="user-field__login__switch-btn"
-                aria-hidden="true"
-                class="font-effect-anaglyph glitch-1"
-                >Sign up</label>
-              <input type="text" name="txt" placeholder="User name" required="" />
-              <input type="email" name="email" placeholder="Email" required="" />
-              <input
-                type="password"
-                name="pwsd"
-                placeholder="Password"
-                required=""
-              />
-              <button>Sign up</button>
-            </form>
-          </div>
-          <div class="login">
-            <form>
-              <label for="user-field__login__switch-btn" aria-hidden="true">Login</label>
-              <input type="text" name="txt" placeholder="User name" required="" />
-              <input
-                type="password"
-                name="pwsd"
-                placeholder="Password"
-                required=""
-              />
-              <button>Login</button>
-            </form>
-            <a class="user-field__login__forgot" href="#">Forget password ?</a>
-          </div>
+          <ul class="user__nav">
+            <li class="user__nav__item">
+              <a href="{% url 'game-publish' %}">Upload game</a>
+            </li>
+            <li class="user__nav__item">
+              <a href="{% url 'logout' %}">Logout</a>
+            </li>
+          </ul>
         </div>
       </div>
       {% block content %} {% endblock %}

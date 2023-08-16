@@ -25,9 +25,11 @@
         <img class="game__thumb" src="{{ game.get_thumbnail }}" alt="Game" />
         <span class="game__name">{{ game.name }}</span>
         <span class="game__description--scroll">
-          <p class="game__description">{{ game.description|safe }}</p>
+          <span class="game__description">
+            <p>{{ game.description|safe }}</p>
+          </span>
         </span>
-        <span class="game__categories">{{ game.genre }}</span>
+        <span class="game__categories">Tag: {{ game.genre }}</span>
       </div>
     </a>
     {% endfor %}

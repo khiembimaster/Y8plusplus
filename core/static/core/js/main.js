@@ -50,21 +50,8 @@ const Web = {
       search__btn.style.textShadow =
         "0 0 0.125em hsl(0 0% 100% / 0.3), 0 0 0.45em var(--red-color-2)";
     });
-
-    // Label account effect
-    login_form__labels.forEach((element) => {
-      element.addEventListener("click", () => {
-        login_form__labels.forEach((inner_element) => {
-          inner_element.classList.toggle("font-effect-anaglyph");
-          inner_element.classList.toggle("glitch-1");
-        });
-      });
-    });
-  
   },
 
-
-  
   start: function () {
     this.handleEvents();
   },

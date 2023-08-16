@@ -1,9 +1,25 @@
-<h1>Login</h1>
+<!-- prettier-ignore  -->
+{% extends "user/base.html" %} 
+{% block title %}Login{% endblock %}
 
-<form method="POST">
-    {% csrf_token %}
-    {{form.as_p}}
-    <input type="submit" value="Login">
-</form>
+{% load static %}
+{% block styles %}
+<link rel="stylesheet" href="{% static 'user/css/login.css' %}" />
+{% endblock %}
 
-<p>Don't have an account? <a href="{% url 'register' %}">Register</a></p>
+<!-- prettier-ignore  -->
+{% block content %}
+<div class="user-field__login">
+  <span class="user-field__login__bg"></span>
+  <header class="user-field__login__header glitch-1 font-effect-anaglyph">
+    Login
+  </header>
+  <form method="POST" class="user-field__form-wrapper">
+    {% csrf_token %} {{form.as_p}}
+    <input type="submit" value="Login" class="user-field__login__submit" />
+  </form>
+  <span class="user-field__login__register">
+    <p>Don't have an account? <a href="{% url 'register' %}">Register</a></p>
+  </span>
+</div>
+{% endblock %}

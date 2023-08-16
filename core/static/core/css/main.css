@@ -60,6 +60,9 @@ body {
 }
 
 body {
+  position: relative;
+  z-index: -100;
+
   font-family: "Chakra Petch", "Times New Roman";
   box-sizing: border-box;
 }

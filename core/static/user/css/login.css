@@ -1,0 +1,132 @@
+.user-field__login {
+  --login-theme-color: var(--purple-color-2);
+  --text-shadow-color: var(--pink-color-2);
+  position: relative;
+  width: 32em;
+  height: 40em;
+  max-width: 100%;
+  max-height: 100%;
+
+  color: white;
+  text-shadow: 0 0 0.125em hsl(0 0% 100% / 0.3),
+    0 0 0.45em var(--text-shadow-color);
+
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.user-field__login__bg {
+  display: block;
+  position: absolute;
+  top: 0;
+  z-index: -1;
+  height: 100%;
+  width: 100%;
+
+  background: url("../img/login_window.png");
+  background-size: cover;
+  background-position: center;
+  opacity: 0.9;
+}
+
+.user-field__login__header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 20%;
+
+  font-size: 3.5em;
+  font-weight: bold;
+  text-align: center;
+  cursor: pointer;
+}
+
+.user-field__form-wrapper {
+  padding: 2em 0 1em 0;
+  height: 60%;
+}
+
+.user-field__login p {
+  position: relative;
+  padding-bottom: 2em;
+}
+
+.user-field__login p label {
+  position: absolute;
+  top: 0;
+  min-width: 5em;
+  text-shadow: 0 0 0.125em hsl(0 0% 100% / 0.3),
+    0 0 0.45em var(--text-shadow-color);
+  transform: translate(130%, -140%);
+}
+
+.user-field__login p input {
+  display: block;
+  width: 60%;
+  height: 3em;
+  padding: 1em;
+  margin: 1em auto;
+
+  color: var(--login-theme-color);
+  text-shadow: 0 0 0.125em hsl(0 0% 100% / 0.3),
+    0 0 0.45em var(--login-theme-color);
+
+  background: transparent;
+  border: 0.15em solid var(--login-theme-color);
+  box-shadow: inset 0 0 0.5em 0 var(--login-theme-color),
+    0 0 0.5em 0 var(--login-theme-color);
+  outline: none;
+}
+
+.user-field__login p input:focus {
+  color: white;
+  text-shadow: 0 0 0.125em hsl(0 0% 100% / 0.3), 0 0 0.45em white;
+
+  background-color: var(--login-theme-color);
+}
+
+.user-field__login__submit {
+  display: block;
+  width: 60%;
+  height: 2em;
+  margin: auto;
+
+  color: white;
+  font-size: 1.5em;
+  font-weight: bold;
+  text-shadow: 0 0 0.125em hsl(0 0% 100% / 0.3), 0 0 0.45em white;
+
+  background: rgba(0, 0, 0, 0.5);
+  border: var(--login-theme-color) solid 0.07em;
+  border-radius: 4px;
+  outline: none;
+
+  transition: 0.2s ease-in;
+}
+
+.user-field__login__submit:hover {
+  background: var(--login-theme-color);
+  box-shadow: inset 0 0 0.5em 0 var(--login-theme-color),
+    0 0 0.5em 0 var(--login-theme-color);
+}
+
+.user-field__login__register {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  position: relative;
+  height: 20%;
+  padding: 2em;
+}
+
+.user-field__login__register p {
+  padding: 0;
+  margin: 0;
+}
+
+.user-field__login__register a:hover {
+  --link-hover-color: var(--pink-color-2);
+  color: var(--link-hover-color);
+  text-shadow: 0 0 0.125em hsl(0 0% 100% / 0.3),
+    0 0 0.45em var(--link-hover-color);
+}

@@ -38,7 +38,7 @@ deactivate () {
 # unset irrelevant variables
 deactivate nondestructive
 
-VIRTUAL_ENV="D:\Y8plusplus\Y8plusplus\y8pp_env"
+VIRTUAL_ENV="D:\Y8pluslus2\y8pp_env"
 export VIRTUAL_ENV
 
 _OLD_VIRTUAL_PATH="$PATH"

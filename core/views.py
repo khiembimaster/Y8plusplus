@@ -8,7 +8,6 @@ from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.urls import reverse_lazy
 from django.contrib.auth.mixins import LoginRequiredMixin
 
-
 from .models import Game
 # Create your views here.
 class GameList(LoginRequiredMixin, ListView):
@@ -34,7 +33,7 @@ class GameDetail(LoginRequiredMixin, DetailView):
 class GamePublish(LoginRequiredMixin, CreateView):
     model = Game
     # fields = '__all__'
-    fields = ['name', 'genre', 'slug', 'description','iframe','thumnail']
+    fields = ['name', 'genre', 'slug', 'description','iframe','thumbnail']
     success_url = reverse_lazy('games')
 
     def form_valid(self, form: BaseModelForm) -> HttpResponse:
@@ -43,7 +42,7 @@ class GamePublish(LoginRequiredMixin, CreateView):
 
 class GameUpdate(LoginRequiredMixin, UpdateView):
     model = Game
-    fields = '__all__'
+    fields = ['name', 'genre', 'slug', 'description','iframe','thumbnail']
     success_url = reverse_lazy('games')
 
 class GameDelete(LoginRequiredMixin, DeleteView):

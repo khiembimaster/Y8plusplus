@@ -14,11 +14,11 @@ class Genre(models.Model):
 
 class Game(models.Model):
     genre = models.ForeignKey(Genre, related_name='games', on_delete=models.CASCADE)
-    name = models.CharField(max_length=255, null=True, blank=True)
+    name = models.CharField(max_length=255, null=False, blank=False)
     slug = models.SlugField()
     description = RichTextField(blank=True, null=True)
-    iframe = models.URLField(max_length=200, null=True, blank=True)
-    thumnail = models.ImageField(upload_to='game_images', blank=False, null=True)
+    iframe = models.URLField(max_length=200)
+    thumbnail = models.ImageField(upload_to='game_images')
     created_by = models.ForeignKey(User, related_name='games', on_delete=models.CASCADE, null=True, blank=True)
     created_at = models.DateTimeField(auto_now_add=True)
     
@@ -32,7 +32,7 @@ class Game(models.Model):
         return f'/{self.genre.slug}/{self.slug}/'
     
     def get_thumbnail(self):
-        if self.thumnail:
-            return 'http://127.0.0.1:8000' + self.thumnail.url
+        if self.thumbnail:
+            return 'http://127.0.0.1:8000' + self.thumbnail.url
         else:
             return ''
