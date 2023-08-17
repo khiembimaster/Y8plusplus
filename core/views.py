@@ -53,7 +53,7 @@ class GamePublish(LoginRequiredMixin, CreateView):
     # fields = '__all__'
     fields = ['name', 'genre', 'slug', 'description','iframe','thumbnail']
     success_url = reverse_lazy('games')
-
+    extra_context={'template_name': 'Publish'}
     def form_valid(self, form: BaseModelForm) -> HttpResponse:
         form.instance.created_by = self.request.user
         return super(GamePublish, self).form_valid(form)
@@ -62,6 +62,7 @@ class GameUpdate(LoginRequiredMixin, UpdateView):
     model = Game
     fields = ['name', 'genre', 'slug', 'description','iframe','thumbnail']
     success_url = reverse_lazy('games')
+    extra_context={'template_name': 'Update'}
 
 class GameDelete(LoginRequiredMixin, DeleteView):
     model = Game

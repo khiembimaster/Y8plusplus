@@ -1,6 +1,6 @@
 <!-- prettier-ignore  -->
 {% extends "layout/window.html" %} 
-{% block title %}Publishing{% endblock %}
+{% block title %}{{template_name}}{% endblock %}
 
 {% load static %}
 {% block styles %}
@@ -8,7 +8,7 @@
 {% endblock %}
 
 <!-- prettier-ignore  -->
-{% block header %}Publishing{% endblock %}
+{% block header %}{{template_name}}{% endblock %}
 
 {% block content %}
 <form method="POST" action="" class="window__content__form">
