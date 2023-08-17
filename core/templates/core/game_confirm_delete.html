@@ -1,6 +1,19 @@
+<!-- prettier-ignore  -->
+{% extends "layout/window.html" %} 
+{% block title %}Publishing{% endblock %}
+
+{% load static %}
+{% block styles %}
+<link rel="stylesheet" href="{% static 'core/css/game_delete.css' %}" />
+{% endblock %}
+
+<!-- prettier-ignore  -->
+{% block header %}Deleting{% endblock %}
+{% block content %}
 <a href="{% url 'games' %}"></a>
-<form method="POST">
-    {% csrf_token %}
-    <p>Are you sure you want to remove this game from our web? "{{game}}" </p>
-    <input type="submit" value="Delete">
+<form method="POST" class="window__content__form">
+  {% csrf_token %}
+  <p>Are you sure you want to remove this game from our web? "{{game}}"</p>
+  <input type="submit" value="Delete" />
 </form>
+{% endblock %}

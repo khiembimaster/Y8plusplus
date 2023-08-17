@@ -11,3 +11,20 @@
   background-size: cover;
   background-position: center;
 }
+
+/* To do */
+.errorlist {
+  display: block;
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin: 0;
+  padding: 0;
+
+  list-style: none;
+}
+
+.errorlist li {
+  display: block;
+  width: 80%;
+}

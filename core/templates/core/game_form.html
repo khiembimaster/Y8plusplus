@@ -1,8 +1,18 @@
-<h1>Game publishing</h1>
+<!-- prettier-ignore  -->
+{% extends "layout/window.html" %} 
+{% block title %}Publishing{% endblock %}
 
-<form action="" method="post" enctype="multipart/form-data">
-    {% csrf_token %}
-    {{ form.media }}
-    {{ form.as_p }}
-    <input type="submit" value="Submit">
-  </form>
+{% load static %}
+{% block styles %}
+<link rel="stylesheet" href="{% static 'core/css/game_publish.css' %}" />
+{% endblock %}
+
+<!-- prettier-ignore  -->
+{% block header %}Publishing{% endblock %}
+
+{% block content %}
+<form method="POST" action="" class="window__content__form">
+  {% csrf_token %} {{form.media}} {{form.as_p}}
+  <input type="submit" value="Submit" />
+</form>
+{% endblock %}

@@ -1,25 +1,17 @@
 const $ = document.querySelector.bind(document);
 const $$ = document.querySelectorAll.bind(document);
 
-const overlay = $(".overlay");
-
-const sidebar = $(".sidebar");
-const sidebar__minimize = $(".sidebar__minimize");
-const menu__items = $$(".menu__item");
-
-const search__field = $(".search-bar__field");
-const search__btn = $(".search-bar__btn");
-
-const login_form__labels = $$(".user-field__login label");
-
 const Web = {
   handleEvents: function () {
     // Remove overlay
+    const overlay = $(".overlay");
     overlay.addEventListener("click", () => {
       overlay.classList.toggle("overlay--active");
     });
 
     // Minimize sidebar
+    const sidebar = $(".sidebar");
+    const sidebar__minimize = $(".sidebar__minimize");
     sidebar__minimize.addEventListener("click", () => {
       sidebar.classList.toggle("sidebar--minimize");
 
@@ -28,6 +20,7 @@ const Web = {
     });
 
     // Select menu item
+    const menu__items = $$(".menu__item");
     menu__items.forEach((element) => {
       element.addEventListener("click", () => {
         const menu__item__selected = $(".menu__item--selected");
@@ -40,6 +33,8 @@ const Web = {
     });
 
     // Search button glowing after focusing search field
+    const search__field = $(".search-bar__field");
+    const search__btn = $(".search-bar__btn");
     search__field.addEventListener("focus", () => {
       search__btn.style.color = "white";
       search__btn.style.textShadow =
