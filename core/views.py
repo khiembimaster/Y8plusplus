@@ -25,6 +25,24 @@ class GameList(LoginRequiredMixin, ListView):
 
         return context
 
+
+class DashBoard(LoginRequiredMixin, ListView):
+    model = Game
+    context_object_name = 'games'
+    template_name = 'core/dashboard.html'
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['games'] = context['games'].filter(
+                created_by=self.request.user)
+        search_input = self.request.GET.get('search-area') or''
+        if search_input:
+            context['games'] = context['games'].filter(
+                name__startswith=search_input)
+        context['search_input'] = search_input
+
+        return context
+
+
 class GameDetail(LoginRequiredMixin, DetailView):
     model = Game
     context_object_name = 'game'

@@ -1,0 +1,31 @@
+<!-- prettier-ignore  -->
+{% extends "layout/window.html" %} 
+{% block title %}Games of {{request.user}}{% endblock %}
+
+{% load static %}
+{% block styles %}
+<link rel="stylesheet" href="{% static 'core/css/game_list.css' %}" />
+{% endblock %}
+
+<!-- prettier-ignore  -->
+{% block content %}
+  <div class="games">
+    {% for game in games %}
+    <a class="game" href="{% url 'game' game.id %}">
+      <span class="game--hover"></span>
+      <div class="game__wrapper">
+        <img class="game__thumb" src="{{ game.get_thumbnail }}" alt="Game" />
+        <span class="game__name">{{ game.name }}</span>
+        <span class="game__description--scroll">
+          <span class="game__description">
+            <p>{{ game.description|safe }}</p>
+          </span>
+        </span>
+        <span class="game__categories">Tag: {{ game.genre }}</span>
+      </div>
+    </a>
+    <a href="{% url 'game-update' game.id %}" class="window__nav__item">Update</a>
+    <a href="{% url 'game-delete' game.id %}" class="window__nav__item">Remove</a>
+    {% endfor %}
+  </div>
+{% endblock %}

@@ -56,9 +56,8 @@
         <div class="window__bg"></div>
         <div class="window__nav__wrapper col-3">
           <nav class="window__nav">
+            <a href="{% url 'dashboard'%}" class="window__nav__item">My Game</a>
             <a href="{% url 'game-publish'%}" class="window__nav__item window__nav__item--selected">Publish game</a>
-            <a href="{% url 'games'%}" class="window__nav__item">Update Game</a>
-            <a href="{% url 'games'%}" class="window__nav__item">Delete Game</a>
           </nav>
         </div>
         <div class="window__content__wrapper col-9">
