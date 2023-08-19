@@ -45,6 +45,15 @@ const Web = {
       search__btn.style.textShadow =
         "0 0 0.125em hsl(0 0% 100% / 0.3), 0 0 0.45em var(--red-color-2)";
     });
+
+    // Auto scrolling text
+    const game__description = $$(".game__description--scroll");
+    game__description.forEach((element) => {
+      if (element.scrollHeight > element.clientHeight) {
+        const text = element.querySelector(".game__description");
+        text.style.animation = "scrolling 20s 1s linear infinite";
+      }
+    });
   },
 
   start: function () {

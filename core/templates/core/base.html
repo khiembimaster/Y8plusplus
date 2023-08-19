@@ -47,24 +47,15 @@
         <i class="fa-solid fa-caret-right sidebar__minimize"></i>
         <div class="sidebar__wrapper">
           <div class="menu">
-            <span class="menu__title">Menu</span>
-            <ul class="menu__list">
-              <li class="menu__item menu__item--selected font-effect-anaglyph">
-                <i class="fa-solid fa-shuffle menu__item__icon"></i>
-                <a href="#" class="menu__item__text">Random</a>
-              </li>
-            </ul>
-          </div>
-          <div class="menu">
             <span class="menu__title">Tags</span>
             <ul class="menu__list">
               <li class="menu__item">
                 <i class="fas fa-ghost menu__item__icon"></i>
-                <a href="#" class="menu__item__text">Horror</a>
+                <a href="#" class="menu__item__text">Visual Novel</a>
               </li>
               <li class="menu__item">
                 <i class="fas fa-walking menu__item__icon"></i>
-                <a href="#" class="menu__item__text">Roguelike</a>
+                <a href="#" class="menu__item__text">Indie</a>
               </li>
             </ul>
           </div>
@@ -90,15 +81,18 @@
           </span>
         </form>
         <div class="user col-1">
-          <i class="fa-solid fa-user user__icon"></i>
-          <ul class="user__nav">
-            <li class="user__nav__item">
-              <a href="{% url 'game-publish' %}">Upload game</a>
-            </li>
-            <li class="user__nav__item">
-              <a href="{% url 'logout' %}">Logout</a>
-            </li>
-          </ul>
+          <span class="user__wrapper">
+            <i class="fa-solid fa-user user__icon"></i>
+            <nav class="user__nav">
+              <a href="{% url 'dashboard' %}" class="user__nav__item">
+                My games
+              </a>
+              <a href="{% url 'game-publish' %}" class="user__nav__item">
+                Upload game
+              </a>
+              <a href="{% url 'logout' %}" class="user__nav__item"> Logout </a>
+            </nav>
+          </span>
         </div>
       </div>
       {% block content %} {% endblock %}

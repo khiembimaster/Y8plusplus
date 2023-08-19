@@ -2,24 +2,30 @@
 {% extends "user/base.html" %} 
 {% block title %}Login{% endblock %}
 
-{% load static %}
-{% block styles %}
-<link rel="stylesheet" href="{% static 'user/css/login.css' %}" />
-{% endblock %}
-
 <!-- prettier-ignore  -->
 {% block content %}
-<div class="user-field__login">
-  <span class="user-field__login__bg"></span>
-  <header class="user-field__login__header glitch-1 font-effect-anaglyph">
-    Login
-  </header>
-  <form method="POST" class="user-field__form-wrapper">
-    {% csrf_token %} {{form.as_p}}
-    <input type="submit" value="Login" class="user-field__login__submit" />
-  </form>
-  <span class="user-field__login__register">
-    <p>Don't have an account? <a href="{% url 'register' %}">Register</a></p>
-  </span>
+<div class="user-field__window row">
+  <div class="user-field__welcome col-5">
+    <span class="faulty-effect">
+      <span class="glowing-text">
+        Y<span class="faulty-letter">8</span>++<br />
+        We<span class="faulty-letter">l</span>come ba<span class="faulty-letter"
+          >c</span
+        >k
+      </span>
+    </span>
+  </div>
+  <div class="user-field__form col-7">
+    <header class="user-field__header glitch-1 font-effect-anaglyph">
+      Login
+    </header>
+    <form method="POST" class="user-field__input">
+      {% csrf_token %} {{form.as_p}}
+      <input type="submit" value="Login" class="user-field__submit-btn" />
+    </form>
+    <span class="user-field__register">
+      <p>Don't have an account? <a href="{% url 'register' %}">Register</a></p>
+    </span>
+  </div>
 </div>
 {% endblock %}

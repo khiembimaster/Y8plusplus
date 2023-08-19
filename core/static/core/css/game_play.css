@@ -12,10 +12,10 @@
 .gameplay {
   display: flex;
   flex-direction: column;
+  padding: calc(var(--header-height)) 0 16em 0;
   width: 72em;
   max-width: 100%;
   min-height: 100%;
-  padding: calc(var(--header-height)) 0 16em 0;
 
   background: var(--pink-color-l4);
   overflow-y: scroll;
@@ -40,7 +40,6 @@
   letter-spacing: 0.3em;
 
   background: none;
-  animation: border-flicker 2s linear infinite;
   cursor: default;
 }
 
@@ -48,12 +47,6 @@
   margin-right: -0.5em;
   text-shadow: 0 0 0.125em hsl(0 0% 100% / 0.3),
     0 0 0.45em var(--game-title-color);
-  animation: text-flicker 3s linear infinite;
-}
-
-.faulty-letter {
-  opacity: 0.5;
-  animation: faulty-flicker 2s linear infinite;
 }
 
 .game__title:hover {
@@ -63,18 +56,6 @@
   background: var(--pink-color-l5);
   box-shadow: inset 0 0 0.5em 0 var(--pink-color-5),
     0 0 0.5em 0 var(--pink-color-5);
-
-  animation: none;
-}
-
-.game__title:hover .glowing-txt {
-  animation: none;
-}
-
-.game__title:hover .faulty-letter {
-  text-shadow: none;
-  opacity: 1;
-  animation: none;
 }
 
 .game__window {
@@ -134,9 +115,9 @@
 
 .game__more-info__content__header {
   display: block;
+  flex: 20;
   padding-right: 0.5em;
   min-width: 4em;
-  flex: 20;
 
   font-size: 1.5em;
   font-weight: 800;
@@ -145,104 +126,6 @@
 
 .game__more-info__content__text {
   display: block;
-  font-size: 1.5em;
   flex: 80;
-}
-
-@keyframes faulty-flicker {
-  0% {
-    opacity: 0.1;
-  }
-  2% {
-    opacity: 0.1;
-  }
-  4% {
-    opacity: 0.5;
-  }
-  19% {
-    opacity: 0.5;
-  }
-  21% {
-    opacity: 0.1;
-  }
-  23% {
-    opacity: 1;
-  }
-  80% {
-    opacity: 0.5;
-  }
-  83% {
-    opacity: 0.4;
-  }
-
-  87% {
-    opacity: 1;
-  }
-}
-
-@keyframes text-flicker {
-  0% {
-    opacity: 0.1;
-  }
-
-  2% {
-    opacity: 1;
-  }
-
-  8% {
-    opacity: 0.1;
-  }
-
-  9% {
-    opacity: 1;
-  }
-
-  12% {
-    opacity: 0.1;
-  }
-  20% {
-    opacity: 1;
-  }
-  25% {
-    opacity: 0.3;
-  }
-  30% {
-    opacity: 1;
-  }
-
-  70% {
-    opacity: 0.7;
-  }
-  72% {
-    opacity: 0.2;
-  }
-
-  77% {
-    opacity: 0.9;
-  }
-  100% {
-    opacity: 0.9;
-  }
-}
-
-@keyframes border-flicker {
-  0% {
-    opacity: 0.1;
-  }
-  2% {
-    opacity: 1;
-  }
-  4% {
-    opacity: 0.1;
-  }
-
-  8% {
-    opacity: 1;
-  }
-  70% {
-    opacity: 0.7;
-  }
-  100% {
-    opacity: 1;
-  }
+  font-size: 1.5em;
 }

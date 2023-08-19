@@ -4,15 +4,30 @@
 
 {% load static %}
 {% block styles %}
-<link rel="stylesheet" href="{% static 'core/css/game_publish.css' %}" />
+<link rel="stylesheet" href="{% static 'core/css/game_modify.css' %}" />
+{% endblock %}
+
+<!-- prettier-ignore  -->
+{% block nav %}
+<a href="{% url 'dashboard'%}" class="window__nav__item">My Games</a>
+<a
+  href="{% url 'game-publish'%}"
+  class="window__nav__item window__nav__item--selected"
+  >Publish game</a
+>
 {% endblock %}
 
 <!-- prettier-ignore  -->
 {% block header %}{{template_name}}{% endblock %}
 
 {% block content %}
-<form method="POST" action="" class="window__content__form" enctype="multipart/form-data">
+<form
+  method="POST"
+  action=""
+  class="window__content__form"
+  enctype="multipart/form-data"
+>
   {% csrf_token %} {{form.media}} {{form.as_p}}
-  <input type="submit" value="Submit" />
+  <input class="window__content__submit-btn" type="submit" value="Submit" />
 </form>
 {% endblock %}

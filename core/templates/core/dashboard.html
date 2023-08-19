@@ -4,28 +4,40 @@
 
 {% load static %}
 {% block styles %}
-<link rel="stylesheet" href="{% static 'core/css/game_list.css' %}" />
+<link rel="stylesheet" href="{% static 'core/css/dashboard_game_list.css' %}" />
 {% endblock %}
 
 <!-- prettier-ignore  -->
+{% block nav %}
+<a
+  href="{% url 'dashboard'%}"
+  class="window__nav__item window__nav__item--selected"
+  >My Games</a
+>
+<a href="{% url 'game-publish'%}" class="window__nav__item">Publish game</a>
+{% endblock %}
+
+<!-- prettier-ignore  -->
+{% block header %}{{template_name}}{% endblock %}
+
 {% block content %}
-  <div class="games">
-    {% for game in games %}
+<div class="games">
+  {% for game in games %}
+  <div class="game__wrapper">
     <a class="game" href="{% url 'game' game.id %}">
-      <span class="game--hover"></span>
-      <div class="game__wrapper">
-        <img class="game__thumb" src="{{ game.get_thumbnail }}" alt="Game" />
+      <img class="game__thumb" src="{{ game.get_thumbnail }}" alt="Game" />
+      <div class="game__content">
         <span class="game__name">{{ game.name }}</span>
-        <span class="game__description--scroll">
-          <span class="game__description">
-            <p>{{ game.description|safe }}</p>
-          </span>
-        </span>
         <span class="game__categories">Tag: {{ game.genre }}</span>
       </div>
     </a>
-    <a href="{% url 'game-update' game.id %}" class="window__nav__item">Update</a>
-    <a href="{% url 'game-delete' game.id %}" class="window__nav__item">Remove</a>
-    {% endfor %}
+    <a href="{% url 'game-update' game.id %}" class="game__update-btn">
+      Update
+    </a>
+    <a href="{% url 'game-delete' game.id %}" class="game__remove-btn">
+      Remove
+    </a>
   </div>
+  {% endfor %}
+</div>
 {% endblock %}

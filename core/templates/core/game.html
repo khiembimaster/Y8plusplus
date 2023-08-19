@@ -1,5 +1,4 @@
-{% extends "core/base.html" %} 
-{% block title %}{{ game.name }}{% endblock %}
+{% extends "core/base.html" %} {% block title %}{{ game.name }}{% endblock %}
 <!-- prettier-ignore  -->
 {% load static %}
 {% block styles %}
@@ -10,11 +9,11 @@
 {% block content %}
 <div class="gameplay__wrapper">
   <div class="gameplay">
-    <div class="game__title">
+    <div class="game__title faulty-effect">
       <span class="glowing-text"> {{ game.name }} </span>
     </div>
     <div class="game__window__wrapper">
-      <div class="game__window text-effect-2">
+      <div class="game__window">
         <iframe src="{{ game.iframe |safe}}" frameborder="0"></iframe>
         <span></span>
         <span></span>
@@ -42,17 +41,6 @@
             <!-- {{ game.genre }} -->
           </span>
         </span>
-      </div>
-    </div>
-    <div class="comments">
-      <span class="comments__header">Comments</span>
-      <span class="comments__placeholder">
-        Log in with your account to leave a comment
-      </span>
-      <div class="comment">
-        <span class="comment__avatar"></span>
-        <span class="comment__user-name"></span>
-        <span class="comment__content"></span>
       </div>
     </div>
   </div>

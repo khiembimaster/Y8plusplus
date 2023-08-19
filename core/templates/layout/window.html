@@ -10,11 +10,6 @@
     />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500&family=Monoton&family=VT323&display=swap"
-      rel="stylesheet"
-    />
-    <!-- Fonts -->
     <!-- Bootstrap -->
     <link
       rel="stylesheet"
@@ -32,20 +27,18 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
     />
-
+    <!-- -->
     <link rel="stylesheet" href="{% static 'core/css/main.css' %}" />
     <link rel="stylesheet" href="{% static 'core/css/utils.css' %}" />
     <link rel="stylesheet" href="{% static 'dashboard/css/window.css' %}" />
     {% block styles %}{% endblock %}
-    <style>
-      @import url("https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500&family=Monoton&display=swap");
-    </style>
   </head>
   <body>
     <div class="window__wrapper">
+      <span class="scanlines-effect"></span>
       <div class="window row">
-        <span class="window__glow"></span>
-        <span class="window__scanlines"></span>
+        <a class="back-btn" href="{% url 'games'%}"><i class="fa-regular fa-circle-left"></i>Back to Mainpage</a>
+        <span class="glowing-screen-effect"></span>
         <span class="window__signboard wrapper-effect">
           <span class="glowing-text">
             To<span class="faulty-letter">p</span>-<span class="red-color"
@@ -56,12 +49,12 @@
         <div class="window__bg"></div>
         <div class="window__nav__wrapper col-3">
           <nav class="window__nav">
-            <a href="{% url 'dashboard'%}" class="window__nav__item">My Game</a>
-            <a href="{% url 'game-publish'%}" class="window__nav__item window__nav__item--selected">Publish game</a>
+            {% block nav %}
+            {% endblock %}
           </nav>
         </div>
         <div class="window__content__wrapper col-9">
-          <span class="window__content__header glitch--js">{% block header %} {% endblock %}</span>
+          <span class="window__content__header RGB-glitch glitch--js">{% block header %} {% endblock %}</span>
           <div class="window__content">
             {% block content %} {% endblock %}
           </div>
@@ -70,7 +63,6 @@
     </div>
       
     </div>
-    <script src="{% static 'dashboard/js/window.js' %}"></script>
     <script src="{% static 'core/js/utils.js' %}"></script>
   </body>
 </html>

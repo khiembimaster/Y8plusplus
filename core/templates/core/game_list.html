@@ -23,7 +23,9 @@
       <span class="game--hover"></span>
       <div class="game__wrapper">
         <img class="game__thumb" src="{{ game.get_thumbnail }}" alt="Game" />
-        <span class="game__name">{{ game.name }}</span>
+        <span class="game__name__decor">
+          <span class="game__name">{{ game.name }}</span>
+        </span>
         <span class="game__description--scroll">
           <span class="game__description">
             <p>{{ game.description|safe }}</p>

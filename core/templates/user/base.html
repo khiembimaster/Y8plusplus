@@ -10,7 +10,6 @@
       rel="stylesheet"
       href="https://fonts.googleapis.com/css?family=Rancho&effect=anaglyph"
     />
-    <!-- Fonts -->
     <!-- Bootstrap -->
     <link
       rel="stylesheet"
@@ -23,16 +22,19 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css"
     />
+    <!-- Css files -->
     <link rel="stylesheet" href="{% static 'core/css/main.css' %}" />
     <link rel="stylesheet" href="{% static 'core/css/utils.css' %}" />
     <link rel="stylesheet" href="{% static 'user/css/main.css' %}" />
     {% block styles %}{% endblock %}
-
     <style>
       @import url("https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500&family=Monoton&display=swap");
     </style>
   </head>
   <body>
-    <div class="user-field">{% block content %} {% endblock %}</div>
+    <div class="user-field">
+      <span class="CRT"></span>
+      {% block content %} {% endblock %}
+    </div>
   </body>
 </html>
