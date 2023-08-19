@@ -29,6 +29,7 @@ class GameList(LoginRequiredMixin, ListView):
 class DashBoard(LoginRequiredMixin, ListView):
     model = Game
     context_object_name = 'games'
+    extra_context = {'template_name':'My Games'}
     template_name = 'core/dashboard.html'
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)

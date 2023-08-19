@@ -11,7 +11,7 @@
 {% block header %}{{template_name}}{% endblock %}
 
 {% block content %}
-<form method="POST" action="" class="window__content__form">
+<form method="POST" action="" class="window__content__form" enctype="multipart/form-data">
   {% csrf_token %} {{form.media}} {{form.as_p}}
   <input type="submit" value="Submit" />
 </form>
