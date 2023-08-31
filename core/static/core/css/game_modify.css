@@ -17,6 +17,16 @@
   margin: 0;
 }
 
+.window__content__form :nth-child(12) {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.window__content__form :nth-child(12) label {
+  margin-bottom: 0.5em;
+}
+
 .window__content__form p input[type="file"] {
   line-height: 1.5;
   height: 4em;

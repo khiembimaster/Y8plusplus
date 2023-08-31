@@ -58,27 +58,20 @@
     0 0 0.5em 0 var(--pink-color-5);
 }
 
-.game__window {
-  position: relative;
-  display: block;
-  width: 100%;
-}
-
-.game__window iframe {
-  position: relative;
-  display: block;
-  width: 100%;
-  height: 100%;
-}
-
 .game__window__wrapper {
   display: flex;
   justify-content: center;
   position: relative;
-  min-width: 100%;
-  min-height: 100%;
+  width: 100%;
+  min-height: 40em;
   margin: 4em 0;
   overflow: hidden;
+}
+
+.game__window__wrapper * {
+  display: block;
+  width: 100%;
+  height: 100%;
 }
 
 .game__information {
