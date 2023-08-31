@@ -33,6 +33,6 @@ class Game(models.Model):
     
     def get_thumbnail(self):
         if self.thumbnail:
-            return 'http://127.0.0.1:8000' + self.thumbnail.url
+            return self.thumbnail.url
         else:
             return ''
