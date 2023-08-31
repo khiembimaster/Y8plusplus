@@ -1,0 +1,81 @@
+@import url("https://fonts.googleapis.com/css2?family=VT323&display=swap");
+
+* {
+  /* Color */
+  --purple-color-1: #17001c;
+  --purple-color-l1: rgba(23, 00, 28, 0.7);
+  --purple-color-m1: rgba(23, 00, 28, 0.8);
+  --purple-color-2: #881deb;
+  --purple-color-l2: rgba(135, 29, 235, 0.2);
+  --purple-color-3: #5b12af;
+  --purple-color-l3: rgba(91, 18, 175, 0.4);
+  --purple-color-m3: rgba(91, 18, 175, 0.9);
+  --purple-color-4: #300494;
+
+  --pink-color-1: #ff0dfe;
+  --pink-color-2: #f9006f;
+  --pink-color-l2: rgba(249, 0, 112, 0.4);
+  --pink-color-3: #e90064;
+  --pink-color-4: #400d51;
+  --pink-color-l4: rgba(64, 13, 81, 0.7);
+  --pink-color-5: #ea168e;
+  --pink-color-l5: rgba(234, 22, 142, 0.5);
+
+  --red-color-1: #ff1818;
+  --red-color-2: #ff0f40;
+  --red-color-l2: rgba(255, 15, 63, 0.16);
+  --red-color-3: #ce060e;
+  --red-color-4: #ff0000;
+  --red-color-5: #f9020d;
+
+  --blue-color-1: #39b5e0;
+  --blue-color-2: #0dc8f4;
+  --blue-color-3: #2be4ea;
+
+  --brown-color-1: #3c181a;
+  --brown-color-l1: rgba(60, 24, 26, 0.5);
+  --brown-color-m1: rgba(60, 24, 26, 0.8);
+
+  /* For size and position */
+  --header-height: 80px;
+  --brand-height: 120px;
+  --header-z-index: 10;
+  --sidebar-z-index: 10;
+
+  /* For effect */
+  --glitch-duration: 5s;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+body {
+  font-family: "VT323", monospace;
+  letter-spacing: 0.1em;
+  box-sizing: border-box;
+}
+
+.main {
+  display: block;
+  height: 100%;
+  position: relative;
+}
+
+/* Reset css */
+a,
+a:hover,
+a:visited {
+  color: inherit;
+  text-decoration: none; /* no underline */
+}
+
+p {
+  padding: 0;
+  margin: 0;
+}
