@@ -28,7 +28,7 @@
         </span>
         <span class="game__description--scroll">
           <span class="game__description">
-            <p>{{ game.description|safe }}</p>
+            <p>{{ game.description|striptags }}</p>
           </span>
         </span>
         <span class="game__categories">Tag: {{ game.genre }}</span>
