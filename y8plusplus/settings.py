@@ -83,8 +83,13 @@ WSGI_APPLICATION = 'y8plusplus.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        #'ENGINE': 'django.db.backends.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'railway',
+        'USER': 'postgres',
+        'PASSWORD': 'IgDSN4ko0faXhe3gJbTH',
+        'HOST': 'containers-us-west-202.railway.app',
+        'PORT': '6434',
     }
 }
 
